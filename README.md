@@ -1,2 +1,3 @@
-# stormworks-tts-addon-app
-The app for my Stormworks tts addon.
+# Stormworks TTS Addon Companion App
+
+This is the application required for my text-to-speech addon in Stormworks.
