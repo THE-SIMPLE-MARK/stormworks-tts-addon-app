@@ -17,6 +17,7 @@ app.on("ready", async () => {
 		resizable: false,
 		fullscreenable: false,
 		autoHideMenuBar: true,
+		title: "Stormworks TTS Companion",
 		webPreferences: {
 			nodeIntegration: false,
 			preload: join(__dirname, "preload.js"),
