@@ -6,14 +6,6 @@ import { Inter } from "next/font/google"
 const inter = Inter({ subsets: ["latin"] })
 
 export default function HomePage() {
-	const [message, setMessage] = React.useState("No message found")
-
-	React.useEffect(() => {
-		window.ipc.on("message", message => {
-			setMessage(message)
-		})
-	}, [])
-
 	return (
 		<>
 			<Head>

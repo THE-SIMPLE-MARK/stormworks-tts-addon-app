@@ -4,35 +4,37 @@
   "description": "My application description",
   "version": "1.0.0",
   "author": "THE-SIMPLE-MARK",
-  "main": "app/background.js",
+  "main": "main/app.js",
   "scripts": {
-    "dev": "nextron --renderer-port 3001",
+    "dev": "electron .",
     "prettier": "prettier --write .",
-    "build": "nextron build",
-    "build:mac": "nextron build --mac",
-    "build:mac:universal": "nextron build --mac --universal",
-    "build:linux": "nextron build --linux",
-    "build:win32": "nextron build --win --ia32",
-    "build:win64": "nextron build --win --x64",
-    "postinstall": "electron-builder install-app-deps"
+    "clean": "rimraf dist renderer/.next renderer/out",
+    "dist": "npm run build && electron-builder",
+    "build": "next build renderer",
+    "pack-app": "npm run build && electron-builder --dir"
+  },
+  "build": {
+    "asar": true,
+    "files": [
+      "main",
+      "renderer/out"
+    ]
   },
   "dependencies": {
     "@nextui-org/react": "^2.1.13",
-    "electron-serve": "^1.1.0",
-    "electron-store": "^8.1.0",
-    "framer-motion": "^10.16.4",
-    "next-themes": "^0.2.1"
-  },
-  "devDependencies": {
     "autoprefixer": "^10.4.16",
-    "electron": "^26.2.2",
+    "electron": "^27.0.3",
     "electron-builder": "^24.6.4",
-    "next": "^14.0.1",
-    "nextron": "^8.12.0",
+    "electron-is-dev": "^2.0.0",
+    "framer-motion": "^10.16.4",
+    "next-themes": "^0.2.1",
     "postcss": "^8.4.31",
-    "prettier": "^3.0.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "tailwindcss": "^3.3.5"
+  },
+  "devDependencies": {
+    "electron-next": "^3.1.5",
+    "prettier": "^3.0.3"
   }
 }
