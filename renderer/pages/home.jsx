@@ -1,4 +1,5 @@
 import React from "react"
+import { Button } from "@nextui-org/react"
 
 export default function HomePage() {
 	const [message, setMessage] = React.useState("No message found")
@@ -9,9 +10,5 @@ export default function HomePage() {
 		})
 	}, [])
 
-	return (
-		<React.Fragment>
-			<div className="font-bold">test</div>
-		</React.Fragment>
-	)
+	return <h1 className="text-3xl font-bold underline">Hello, world!</h1>
 }
