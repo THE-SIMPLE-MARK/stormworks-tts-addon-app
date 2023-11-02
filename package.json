@@ -1,14 +1,14 @@
 {
   "private": true,
-  "name": "my-nextron-app",
-  "description": "My application description",
+  "name": "stormworks-tts-addon-app",
+  "description": "The app for my Stormworks tts addon.",
   "version": "1.0.0",
   "author": "THE-SIMPLE-MARK",
   "main": "main/app.js",
   "scripts": {
     "dev": "electron .",
     "prettier": "prettier --write .",
-    "clean": "rimraf dist renderer/.next renderer/out",
+    "clean": "del /s /f /q dist && del /s /f /q \"./renderer/.next\" && del /s /f /q \"./renderer/out\"",
     "dist": "npm run build && electron-builder",
     "build": "next build renderer",
     "pack-app": "npm run build && electron-builder --dir"
@@ -23,10 +23,10 @@
   "dependencies": {
     "@nextui-org/react": "^2.1.13",
     "autoprefixer": "^10.4.16",
-    "electron": "^27.0.3",
-    "electron-builder": "^24.6.4",
     "electron-is-dev": "^2.0.0",
+    "electron-next": "^3.1.5",
     "framer-motion": "^10.16.4",
+    "next": "^14.0.1",
     "next-themes": "^0.2.1",
     "postcss": "^8.4.31",
     "react": "^18.2.0",
@@ -34,7 +34,8 @@
     "tailwindcss": "^3.3.5"
   },
   "devDependencies": {
-    "electron-next": "^3.1.5",
+    "electron": "^27.0.3",
+    "electron-builder": "^24.6.4",
     "prettier": "^3.0.3"
   }
 }
